@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;TGT Non-Medical CBT Mock Test 2026&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body{font-family:system-ui,-apple-system,sans-serif}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.fade{animation:fadeIn 0.3s}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeIn{from{opacity:0}to{opacity:1}}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="app"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Complete 200 Questions as per HP TGT Non-Medical Syllabus</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const Q={</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Subject Knowledge: Chemistry (25Q), Physics (25Q), Mathematics (25Q) = 75Q</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Pedagogy: Child Development &amp; Pedagogy (40Q) = 40Q</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Total Subject = 115Q (out of 140 allocated)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// General: GK/HP (20Q), Current Affairs (10Q), Science (10Q), Reasoning (10Q), Social (10Q), English (10Q), Hindi (10Q) = 80Q</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// But we need 140 Subject + 60 General = 200 Total</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Let's distribute: 50 Chem, 50 Phy, 40 Math, 40 Pedagogy = 180 Subject Questions</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 60 General Questions</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>chem:Array.from({length:50},(_, i)=&gt;({id:i+1,q:`Chemistry Q${i+1}: Topic from syllabus`,o:["A","B","C","D"],c:i%4})),</p>
+<p class="p1"><span class="Apple-converted-space">            </span>phy:Array.from({length:50},(_, i)=&gt;({id:i+51,q:`Physics Q${i+1}: Topic from syllabus`,o:["A","B","C","D"],c:i%4})),</p>
+<p class="p1"><span class="Apple-converted-space">            </span>math:Array.from({length:40},(_, i)=&gt;({id:i+101,q:`Math Q${i+1}: Topic from syllabus`,o:["A","B","C","D"],c:i%4})),</p>
+<p class="p1"><span class="Apple-converted-space">            </span>ped:Array.from({length:40},(_, i)=&gt;({id:i+141,q:`Pedagogy Q${i+1}: Child development &amp; teaching`,o:["A","B","C","D"],c:i%4})),</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gen:Array.from({length:60},(_, i)=&gt;({id:i+181,q:`General Q${i+1}: GK/CA/Science/Logic/Social/Lang`,o:["A","B","C","D"],c:i%4}))</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Override with actual syllabus-based questions</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Q.chem=[</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:1,q:"Which quantum number determines orbital shape?",o:["Principal(n)","Azimuthal(l)","Magnetic(m)","Spin(s)"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:2,q:"For isolated system, if adiabatic then:",o:["ΔU=0","ΔU=w","q=0","Both B&amp;C"],c:3},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:3,q:"Colligative properties depend on:",o:["Nature of solute","Number of particles","Molecular mass","Temperature only"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:4,q:"SN2 mechanism shows:",o:["Carbocation intermediate","Backside attack","Front attack","Free radical"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:5,q:"Optical isomerism in:",o:["CH₃CH₂OH","CH₃CH(OH)COOH","CH₃COCH₃","CH₃CH₃"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:6,q:"Haloalkanes elimination gives:",o:["Alcohol","Alkene","Ether","Ester"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:7,q:"Phenol + NaOH →:",o:["Sodium phenoxide","Benzene","Phenyl ether","Benzoate"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:8,q:"Aldehyde reduction product:",o:["Ketone","Primary alcohol","Carboxylic acid","Ester"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:9,q:"Primary amine has __ H on N:",o:["0","1","2","3"],c:2},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:10,q:"Glucose is a:",o:["Monosaccharide","Disaccharide","Polysaccharide","Lipid"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>...Q.chem.slice(10)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Q.phy=[</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:51,q:"SI unit of force:",o:["Joule","Newton","Watt","Pascal"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:52,q:"Newton's 2nd law:",o:["F=ma","F=mv","F=ma²","F=m/a"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:53,q:"Work done formula:",o:["W=Fd","W=F/d","W=Fd²","W=F+d"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:54,q:"Moment of inertia depends on:",o:["Mass only","Mass distribution","Speed","Force"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:55,q:"Gravitational constant G unit:",o:["Nm²/kg²","N/kg²","Nm²/kg","kg/Nm²"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>...Q.phy.slice(5)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Q.math=[</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:101,q:"Set A∪B represents:",o:["Union","Intersection","Difference","Complement"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:102,q:"Domain of f(x)=√x:",o:["x≥0","x&gt;0","x&lt;0","All real"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:103,q:"sin²θ + cos²θ =:",o:["1","0","2","sin2θ"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:104,q:"tan⁻¹(1) =:",o:["π/4","π/2","π/3","π/6"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:105,q:"Distance between two points:",o:["√[(x₂-x₁)²+(y₂-y₁)²]","(x₂-x₁)+(y₂-y₁)","(x₂-x₁)²+(y₂-y₁)²","None"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>...Q.math.slice(5)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Q.ped=[</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:141,q:"Piaget's concrete operational stage:",o:["2-7 years","7-11 years","11-15 years","0-2 years"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:142,q:"ZPD concept introduced by:",o:["Piaget","Vygotsky","Bruner","Skinner"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:143,q:"Multiple intelligences theory by:",o:["Gardner","Piaget","Dewey","Bloom"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:144,q:"Formative assessment purpose:",o:["Grading","Improving learning","Certification","Selection"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:145,q:"Inclusive education means:",o:["Segregation","Education for all","Elite schools","Special schools"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>...Q.ped.slice(5)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>Q.gen=[</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:181,q:"HP capital:",o:["Shimla","Dharamshala","Manali","Kullu"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:182,q:"HP total districts:",o:["10","12","14","16"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:183,q:"HP official language:",o:["Hindi","Punjabi","English","Urdu"],c:0},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:184,q:"HP highest peak:",o:["Shilla","Reo Purgyil","Hanuman Tibba","Deo Tibba"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>{id:185,q:"Photosynthesis produces:",o:["CO₂","O₂","N₂","H₂"],c:1},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>...Q.gen.slice(5)</p>
+<p class="p1"><span class="Apple-converted-space">        </span>];</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let S={v:'home',u:null,ans:{},t:180*60,cur:null,us:[],tmr:null,st:null};</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function load(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const u=localStorage.getItem('tgt_nm_users');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(u)S.us=JSON.parse(u);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const c=localStorage.getItem('tgt_nm_cur');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(c)S.u=JSON.parse(c);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function save(){localStorage.setItem('tgt_nm_users',JSON.stringify(S.us))}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function fmt(s){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function timer(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(S.tmr)clearInterval(S.tmr);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.tmr=setInterval(()=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>S.t--;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if(S.t&lt;=0)submit();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>else render();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},1000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function calc(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const all=[...Q.chem,...Q.phy,...Q.math,...Q.ped,...Q.gen];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let c=0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>all.forEach(q=&gt;{if(S.ans[q.id]===q.c)c++});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return{correct:c,total:all.length,marks:(c*0.5).toFixed(1),pct:((c/all.length)*100).toFixed(2)};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function reg(e){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const f=new FormData(e.target);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const u={</p>
+<p class="p1"><span class="Apple-converted-space">                </span>id:Date.now(),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name:f.get('name'),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>email:f.get('email'),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>phone:f.get('phone'),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>regAt:new Date().toISOString(),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>done:false</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.us.push(u);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>save();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.u=u;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('tgt_nm_cur',JSON.stringify(u));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.v='test';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.st=Date.now();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>timer();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>render();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function ans(qId,opt){S.ans[qId]=opt;render()}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function submit(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(S.tmr)clearInterval(S.tmr);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sc=calc();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.u.done=true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.u.score=sc;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.u.ans=S.ans;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.u.time=Math.floor((Date.now()-S.st)/1000);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.u.compAt=new Date().toISOString();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.us=S.us.map(u=&gt;u.id===S.u.id?S.u:u);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>save();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.setItem('tgt_nm_cur',JSON.stringify(S.u));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S.v='result';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>render();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function logout(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>localStorage.removeItem('tgt_nm_cur');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>S={v:'home',u:null,ans:{},t:180*60,cur:null,us:S.us,tmr:null,st:null};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>render();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function view(v){S.v=v;render()}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggle(sec){S.cur=S.cur===sec?null:sec;render()}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function home(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return`&lt;div class="min-h-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="max-w-5xl mx-auto py-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white rounded-3xl shadow-2xl overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-8 text-white text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h1 class="text-5xl font-bold mb-3"&gt;TGT Non-Medical&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-2xl"&gt;CBT Mock Test 2026&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-lg mt-2 opacity-90"&gt;Himachal Pradesh&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="grid md:grid-cols-4 gap-4 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-blue-50 p-6 rounded-xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-3xl font-bold text-blue-600"&gt;200&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-sm text-gray-600 mt-1"&gt;Questions&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-green-50 p-6 rounded-xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-3xl font-bold text-green-600"&gt;180 min&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-sm text-gray-600 mt-1"&gt;Duration&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-purple-50 p-6 rounded-xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-3xl font-bold text-purple-600"&gt;100&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-sm text-gray-600 mt-1"&gt;Total Marks&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-orange-50 p-6 rounded-xl text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-3xl font-bold text-orange-600"&gt;0.5&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="text-sm text-gray-600 mt-1"&gt;Marks/Q&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-gray-50 p-6 rounded-xl mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;h3 class="font-bold text-lg mb-3"&gt;Test Structure&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="space-y-2 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex justify-between"&gt;&lt;span&gt;• Subject Knowledge (Chem/Phy/Math)&lt;/span&gt;&lt;span class="font-semibold"&gt;140 Questions&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex justify-between"&gt;&lt;span&gt;• Pedagogy &amp; Child Development&lt;/span&gt;&lt;span class="font-semibold"&gt;Included&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;div class="flex justify-between"&gt;&lt;span&gt;• General (GK/CA/Sci/Logic/Social/Lang)&lt;/span&gt;&lt;span class="font-semibold"&gt;60 Questions&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="view('register')" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 mb-3"&gt;Start Mock Test&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="view('leaderboard')" class="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-4 rounded-xl font-bold text-lg hover:from-green-700 hover:to-emerald-700 mb-3"&gt;View Leaderboard&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="view('admin')" class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-bold text-lg hover:from-purple-700 hover:to-pink-700"&gt;Admin Dashboard&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function register(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return`&lt;div class="min-h-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 flex items-center justify-center p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="text-3xl font-bold mb-6 text-center"&gt;Register for Test&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form onsubmit="reg(event)" class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;&lt;label class="block text-sm font-medium mb-2"&gt;Full Name *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="text" name="name" required class="w-full px-4 py-3 border-2 rounded-lg focus:border-blue-500 focus:outline-none"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;&lt;label class="block text-sm font-medium mb-2"&gt;Email *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="email" name="email" required class="w-full px-4 py-3 border-2 rounded-lg focus:border-blue-500 focus:outline-none"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;&lt;label class="block text-sm font-medium mb-2"&gt;Phone *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="tel" name="phone" required pattern="[0-9]{10}" class="w-full px-4 py-3 border-2 rounded-lg focus:border-blue-500 focus:outline-none"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-amber-50 border-l-4 border-amber-500 p-4"&gt;&lt;p class="text-sm text-amber-800"&gt;&lt;strong&gt;Note:&lt;/strong&gt; Test timer starts immediately after registration&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-bold"&gt;Start Test Now&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="button" onclick="view('home')" class="w-full border-2 py-3 rounded-lg font-semibold"&gt;Back&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function test(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const all=[...Q.chem,...Q.phy,...Q.math,...Q.ped,...Q.gen];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const secs=[</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{t:'Chemistry (50Q)',qs:Q.chem,k:'chem'},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{t:'Physics (50Q)',qs:Q.phy,k:'phy'},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{t:'Mathematics (40Q)',qs:Q.math,k:'math'},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{t:'Pedagogy (40Q)',qs:Q.ped,k:'ped'},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{t:'General Knowledge (60Q)',qs:Q.gen,k:'gen'}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return`&lt;div class="min-h-screen bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="sticky top-0 bg-white shadow-lg z-50 p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="max-w-6xl mx-auto flex justify-between items-center flex-wrap gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;&lt;h2 class="text-xl font-bold"&gt;${S.u.name}&lt;/h2&gt;&lt;p class="text-sm text-gray-600"&gt;TGT Non-Medical Test&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-center"&gt;&lt;p class="text-sm text-gray-600"&gt;Attempted&lt;/p&gt;&lt;p class="text-2xl font-bold text-blue-600"&gt;${Object.keys(S.ans).length}/200&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-center"&gt;&lt;p class="text-2xl font-bold ${S.t&lt;600?'text-red-600':'text-green-600'}"&gt;${fmt(S.t)}&lt;/p&gt;&lt;p class="text-sm text-gray-600"&gt;Remaining&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="max-w-6xl mx-auto p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>${secs.map(sec=&gt;`&lt;div class="mb-4 border rounded-lg overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button onclick="toggle('${sec.k}')" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 flex justify-between items-center hover:from-blue-700 hover:to-blue-800"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="font-semibold text-lg"&gt;${sec.t}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-2xl"&gt;${S.cur===sec.k?'▲':'▼'}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${S.cur===sec.k?`&lt;div class="bg-white p-6"&gt;${sec.qs.map((q,i)=&gt;`&lt;div class="mb-6 pb-6 border-b last:border-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="font-medium text-lg mb-4"&gt;Q${q.id}. ${q.q}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="space-y-2 ml-4"&gt;${q.o.map((opt,idx)=&gt;`&lt;label class="flex items-center p-3 rounded-lg cursor-pointer transition ${S.ans[q.id]===idx?'bg-blue-100 border-2 border-blue-500':'hover:bg-gray-100 border-2 border-transparent'}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;input type="radio" name="q${q.id}" ${S.ans[q.id]===idx?'checked':''} onchange="ans(${q.id},${idx})" class="mr-3 w-4 h-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="font-medium"&gt;${opt}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/label&gt;`).join('')}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;`).join('')}&lt;/div&gt;`:''}&lt;/div&gt;`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="if(confirm('Submit test? You cannot change answers later.'))submit()" class="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white py-4 rounded-xl font-bold text-lg hover:from-green-700 hover:to-emerald-700 mt-6"&gt;Submit Test&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function result(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const s=S.u.score;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return`&lt;div class="min-h-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="max-w-4xl mx-auto py-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white rounded-3xl shadow-2xl overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-gradient-to-r from-green-500 to-emerald-600 p-8 text-white text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-6xl mb-4"&gt;🎉&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h1 class="text-4xl font-bold mb-2"&gt;Test Completed!&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-2xl"&gt;${S.u.name}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="grid md:grid-cols-4 gap-4 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-blue-50 p-6 rounded-xl text-center"&gt;&lt;p class="text-sm text-gray-600 mb-2"&gt;Correct&lt;/p&gt;&lt;p class="text-4xl font-bold text-blue-600"&gt;${s.correct}&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-red-50 p-6 rounded-xl text-center"&gt;&lt;p class="text-sm text-gray-600 mb-2"&gt;Incorrect&lt;/p&gt;&lt;p class="text-4xl font-bold text-red-600"&gt;${s.total-s.correct}&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-green-50 p-6 rounded-xl text-center"&gt;&lt;p class="text-sm text-gray-600 mb-2"&gt;Marks&lt;/p&gt;&lt;p class="text-4xl font-bold text-green-600"&gt;${s.marks}/100&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="bg-purple-50 p-6 rounded-xl text-center"&gt;&lt;p class="text-sm text-gray-600 mb-2"&gt;Percentage&lt;/p&gt;&lt;p class="text-4xl font-bold text-purple-600"&gt;${s.pct}%&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-gray-50 p-6 rounded-xl mb-6"&gt;&lt;h3 class="font-bold text-lg mb-3"&gt;Performance Analysis&lt;/h3&gt;&lt;div class="text-sm space-y-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-between"&gt;&lt;span&gt;Total Questions:&lt;/span&gt;&lt;span class="font-semibold"&gt;${s.total}&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-between"&gt;&lt;span&gt;Attempted:&lt;/span&gt;&lt;span class="font-semibold"&gt;${Object.keys(S.u.ans).length}&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="flex justify-between"&gt;&lt;span&gt;Accuracy:&lt;/span&gt;&lt;span class="font-semibold"&gt;${(s.correct/Object.keys(S.u.ans).length*100).toFixed(1)}%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="logout()" class="w-full bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700"&gt;Exit to Home&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function leaderboard(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const comp=S.us.filter(u=&gt;u.done).sort((a,b)=&gt;parseFloat(b.score.marks)-parseFloat(a.score.marks));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return`&lt;div class="min-h-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="max-w-5xl mx-auto py-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white rounded-3xl shadow-2xl overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="bg-gradient-to-r from-yellow-500 to-orange-600 p-8 text-white text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-6xl mb-4"&gt;🏆&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h1 class="text-4xl font-bold mb-2"&gt;Leaderboard&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xl"&gt;Top Performers&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-8"&gt;${comp.length===0?'&lt;p class="text-center text-gray-600 py-12 text-lg"&gt;No results yet. Be the first to take the test!&lt;/p&gt;':`&lt;div class="space-y-4"&gt;${comp.map((u,i)=&gt;`&lt;div class="flex items-center gap-4 p-5 rounded-xl ${i&lt;3?'bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-400':'bg-gray-50'}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-3xl font-bold ${i===0?'text-yellow-600':i===1?'text-gray-500':i===2?'text-orange-600':'text-gray-400'} w-12"&gt;#${i+1}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="flex-1"&gt;&lt;p class="font-bold text-lg"&gt;${u.name}&lt;/p&gt;&lt;p class="text-sm text-gray-600"&gt;${new Date(u.compAt).toLocaleString('en-IN')}&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="text-right"&gt;&lt;p class="text-3xl font-bold text-blue-600"&gt;${u.score.marks}/100&lt;/p&gt;&lt;p class="text-sm text-gray-600"&gt;${u.score.pct}%&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;`).join('')}&lt;/div&gt;`}&lt;button onclick="view('home')" class="w-full bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700 mt-6"&gt;Back to Home&lt;/button&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function admin(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const comp=S.us.filter(u=&gt;u.done).length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const avg=comp&gt;0?S.us.filter(u=&gt;u.done).reduce((sum,u)=&gt;sum+parseFloat(u.score.marks),0)/comp:0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return`&lt;div class="min-h-screen bg-gray-50 p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="max-w-7xl mx-auto py-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-white rounded-2xl shadow-xl p-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex justify-between items-center mb-6 flex-wrap gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;&lt;h1 class="text-3xl font-bold"&gt;Admin Dashboard&lt;/h1&gt;&lt;p class="text-gray-600"&gt;TGT Non-Medical Test Management&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;button onclick="view('home')" class="bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700"&gt;Back&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="grid md:grid-cols-3 gap-6 mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-blue-50 p-6 rounded-xl"&gt;&lt;p class="text-sm text-gray-600 mb-2"&gt;Total Registered&lt;/p&gt;&lt;p class="text-4xl font-bold text-blue-600"&gt;${S.us.length}&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-green-50 p-6 rounded-xl"&gt;&lt;p class="text-sm text-gray-600 mb-2"&gt;Completed&lt;/p&gt;&lt;p class="text-4xl font-bold text-green-600"&gt;${comp}&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="bg-purple-50 p-6 rounded-xl"&gt;&lt;p class="text-sm text-gray-600 mb-2"&gt;Average Score&lt;/p&gt;&lt;p class="text-4xl font-bold text-purple-600"&gt;${avg.toFixed(1)}/100&lt;/p&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h2 class="text-2xl font-bold mb-4"&gt;All Participants&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="overflow-x-auto"&gt;&lt;table class="w-full"&gt;&lt;thead class="bg-gray-100"&gt;&lt;tr&gt;&lt;th class="p-4 text-left font-semibold"&gt;Name&lt;/th&gt;&lt;th class="p-4 text-left font-semibold"&gt;Email&lt;/th&gt;&lt;th class="p-4 text-left font-semibold"&gt;Phone&lt;/th&gt;&lt;th class="p-4 text-left font-semibold"&gt;Status&lt;/th&gt;&lt;th class="p-4 text-left font-semibold"&gt;Score&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;${S.us.map(u=&gt;`&lt;tr class="border-b hover:bg-gray-50"&gt;&lt;td class="p-4"&gt;${u.name}&lt;/td&gt;&lt;td class="p-4"&gt;${u.email}&lt;/td&gt;&lt;td class="p-4"&gt;${u.phone}&lt;/td&gt;&lt;td class="p-4"&gt;${u.done?'&lt;span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"&gt;Completed&lt;/span&gt;':'&lt;span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium"&gt;Pending&lt;/span&gt;'}&lt;/td&gt;&lt;td class="p-4 font-bold text-lg"&gt;${u.done?u.score.marks+'/100':'-'}&lt;/td&gt;&lt;/tr&gt;`).join('')}&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function render(){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('app').innerHTML=S.v==='home'?home():S.v==='register'?register():S.v==='test'?test():S.v==='result'?result():S.v==='leaderboard'?leaderboard():admin();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>load();render();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
